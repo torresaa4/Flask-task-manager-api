@@ -1,5 +1,4 @@
 from app import create_app
-from models import UserModel, Tasks
 from extensions import db
 from dotenv import load_dotenv
 load_dotenv()

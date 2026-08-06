@@ -1,22 +1,22 @@
-# Flask Task Manager Rest API
+# Flask Task Manager REST API
 
-## A fully functioning REST API beginner friendly project built with Flask ,SQlAlchemy, and JWT authentication
+## A fully functioning REST API beginner friendly project built with Flask ,SQLAlchemy, PostgreSQL and JWT authentication
 
 This project is a beginner friendly REST API built with Flask that allows users to register, authenticate and manage their own tasks. It handles backend fundamentals such as RESTful API design, CRUD operations, JWT authentication, password hashing, SQLAlchemy ORM, pagiantion, and input validation. Every file in this repositry is expected to work and provides users with a sample .env.example file to create your own secret keys and configuration values.
 
 ## Features
 - User registration and login
 - JWT access and refresh tokens as user logs in
-- secure passwrods due to hashing
-- create, view, update, and delete tasks
-- view, update, and delete users
-- user authorization (each user can only interact with their own tasks)
-- pagination for retreiving tasks and users
-- error handling
+- Password hashing
+- Create, view, update, and delete tasks
+- View, update, and delete users
+- User authorization (each user can only interact with their own tasks)
+- Pagination for retreiving tasks and users
+- Error handling
 
 ## Installation
-1. clone the repository
-2. create a virtual environment
+1. Clone the repository
+2. Create a virtual environment
     #### macOS / linux
     - python3 -m venv .venv
     - source .venv/bin/activate
@@ -24,12 +24,15 @@ This project is a beginner friendly REST API built with Flask that allows users 
     #### Windows
     - python -m venv .venv
     - .venv\Scripts\activate
-3. install required packages
+3. Install required packages
     - pip install -r requirements.txt
-4. create a .env file using .env.example
-5. create the database
-    - python create_db.py
-6. start the application 
+4. Create a .env file using .env.example
+5. Set up PostgreSQL
+    - Use psql postgres to connect with Postgresql
+    - If you don't already have a Postgresql user, create one with a password: CREATE USER username WITH PASSWORD 'your_password'; 
+    - Create task manager database with user as owner: CREATE DATABASE TASK_MANAGER OWNER username;
+    - Create the tables: python3 create_db.py
+6. Start the application 
     - flask run
 
 ## API Endpoints
